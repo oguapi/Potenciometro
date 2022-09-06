@@ -2,4 +2,3 @@ sklearn
 pandas
 streamlit
 firebase-admin
-pickle
