@@ -1,0 +1,4 @@
+sklearn
+pandas
+streamlit
+python-firebase-1.2

@@ -1,0 +1,11 @@
+En la carpeta del proyecto
+python -m venv venv  #Creo el entorno
+
+venv\Scripts\activate #entro al entorno
+
+Instalamos librerias
+(dentro del entorno) pip install pandas
+
+pip install streamlit
+
+pip install sklearn
