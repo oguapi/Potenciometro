@@ -2,4 +2,4 @@ sklearn
 pandas
 streamlit
 firebase-admin
-PIL
+Image
