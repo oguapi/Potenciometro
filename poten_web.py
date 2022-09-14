@@ -30,9 +30,9 @@ def main():
         st.title("Potenciostato")  #titulo de la pagina
     with col2:
         #st.header("Representacion") #Encabezado
-        st.image('image\potenciostatoRep.jpg',None,150)
+        st.image('image/potenciostatoRep.jpg',None,150)
 
-    imagen= Image.open('image\logo espol.png') #Abrimos la imagen
+    imagen= Image.open('image/logo espol.png') #Abrimos la imagen
     st.sidebar.image(imagen,None)
 
     st.sidebar.header("Interfaz de Usuario")  #entrada de datos del usuario
