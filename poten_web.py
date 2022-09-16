@@ -1,5 +1,4 @@
 #Importar librerias
-#from turtle import onclick
 import streamlit as st
 import pickle
 import pandas as pd
@@ -67,7 +66,7 @@ def main():
         tabla= pd.DataFrame(newvals)
         #tabla1= tabla.transpose()
         st.subheader('Valores leidos')
-        st.write(tabla)
+        #st.write(tabla)
         #Manipulando el dataframe para mostrarla mejor
         #print(tabla['Bit'])
         #fila= tabla['Bit'].to_numpy.tolist()# la columna de interes la cambiamos a lista

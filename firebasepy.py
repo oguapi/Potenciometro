@@ -5,6 +5,13 @@ from firebase_admin import db
 #import random
 
 #para no inicializar mas de una vez la app de firebase
+if not firebase_admin._apps:
+    #cargo el certificado de mi proyecto firebase
+    firebase_sdk= credentials.Certificate('potenciostato-firebase-adminsdk-g2yos-dad1c9c5b2.json')
+
+    #Hacemos referencia a la base de datos en tiempo real de firebase
+    firebase_admin.initialize_app(firebase_sdk,{'databaseURL':'https://potenciostato-default-rtdb.firebaseio.com/'})
+
 """ if not firebase_admin._apps:
     #cargo el certificado de mi proyecto firebase
     firebase_sdk= credentials.Certificate('esp32base-64b3f-firebase-adminsdk-i4rwi-27859964f5.json')
@@ -12,13 +19,6 @@ from firebase_admin import db
     #Hacemos referencia a la base de datos en tiempo real de firebase
     firebase_admin.initialize_app(firebase_sdk,{'databaseURL':'https://esp32base-64b3f-default-rtdb.firebaseio.com/'})
  """
-
-if not firebase_admin._apps:
-    #cargo el certificado de mi proyecto firebase
-    firebase_sdk= credentials.Certificate('potenciostato-firebase-adminsdk-g2yos-dad1c9c5b2.json')
-
-    #Hacemos referencia a la base de datos en tiempo real de firebase
-    firebase_admin.initialize_app(firebase_sdk,{'databaseURL':'https://potenciostato-default-rtdb.firebaseio.com/'})
 
 """ 
 #Creo una coleccion con el nombre productos con un producto
@@ -42,7 +42,7 @@ with open("datos.txt") as archivo:
             #print(list3)
         except:
             list3= list[3]
-        producto_ref= ref.child('Sep-6-2022-14:30')#damos la referencia del producto a modificar
+        producto_ref= ref.child('Sep-6-2022-18:20')#damos la referencia del producto a modificar
         producto_ref.update({f:{'Bit':list[0],
                             'A0':list[1],
                             'A1':list[2],
