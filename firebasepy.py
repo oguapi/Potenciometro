@@ -99,6 +99,3 @@ for key, muestras in snapshot.items():
 
 ##snapshot= ref.orderByValue.limit_to_last(1).get()
 #print(snapshot)
-
-#karen= ['la belleza de lo desagradable','falsos recuerdos','perderme para encontrarte','pecados placenteros','fuego', 'the dare','un beso bajo la lluvia','los cuervos','still with you','boulevard']
-#print(random.choice(karen))
