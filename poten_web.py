@@ -1,4 +1,5 @@
 #Importar librerias
+from turtle import onclick
 import streamlit as st
 import pickle
 import pandas as pd
@@ -56,13 +57,31 @@ def main():
 
     #Haremos el llamado del scrip q maneja la bd
     referencia= 'Lecturas'
-    newvals= firebasepy.extraerVal(referencia)
-    m=0
-    tabla= pd.DataFrame(newvals)
-    tabla1= tabla.transpose()
+    claves= firebasepy.claves(referencia)
+    #El usuario escoja
+    eleccion = st.selectbox("Cual prueba le gustaría mostrar?",claves)
+    if st.button('Mostrar'):
+        newvals= firebasepy.extraerVal(referencia+'/'+eleccion)
+        #print(newvals)
+        m=0
+        tabla= pd.DataFrame(newvals)
+        #tabla1= tabla.transpose()
+        st.subheader('Valores leidos')
+        st.write(tabla)
+        #Manipulando el dataframe para mostrarla mejor
+        #print(tabla['Bit'])
+        #fila= tabla['Bit'].to_numpy.tolist()# la columna de interes la cambiamos a lista
+        #print(fila)
+        #tabla1= tabla.loc[:,('A0','A1','A2')]
+        tabla1= tabla.set_index('Bit') #establesco la columna bit como el nuevo indice
+        st.write(tabla1)
+        st.line_chart(tabla1['A0'])
+        st.bar_chart(tabla1.sort_index(False))
     #for key, muestras in newvals.items():
     #    tabla= pd.DataFrame(muestras, index=[m])
     #    m+=1
+
+#df.to_csv() #para exportarlo a csv
 
     #El usuario escoja
     #option= ['Linear Regression','Logistic Regression', 'SVM']
@@ -77,9 +96,6 @@ def main():
         return features
     vals= get_db_firebase()
 
-
-    st.subheader('Valores leidos')
-    st.write(tabla1)
 
     st.subheader('Valores procesados')
     st.write(vals)
@@ -96,7 +112,7 @@ def main():
     st.sidebar.subheader("  ")
     st.sidebar.subheader("  ")
 
-    st.line_chart(tabla1)
+    
     
     chart_data = pd.DataFrame(
         np.random.randn(20, 3),
