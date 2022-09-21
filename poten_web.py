@@ -114,11 +114,15 @@ def main():
             #tabla1= tabla.loc[:,('A0','A1','A2')]
             tabla1= tabla.set_index('Bit') #establesco la columna bit como el nuevo indice
             st.write(tabla1)
-            st.line_chart(tabla1['A0'])
-            st.bar_chart(tabla1.sort_index(False))
+            #st.line_chart(tabla1['A0'])
+            #st.bar_chart(tabla1.sort_index(False))
         #for key, muestras in newvals.items():
         #    tabla= pd.DataFrame(muestras, index=[m])
         #    m+=1
+
+        if st.button('Descargar datos'):
+            #Boton para descargar los datos
+            b=0
 
     #df.to_csv() #para exportarlo a csv
 
