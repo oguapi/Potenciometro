@@ -8,11 +8,11 @@ from PIL import Image  #Para poner imagen
 import firebasepy
 
 #Extraer los archivos pickle
-with open('lin_reg.pkl', 'rb') as li:
+""" with open('lin_reg.pkl', 'rb') as li:
     lin_reg= pickle.load(li)
 
 with open('log_reg.pkl', 'rb') as lo:
-    log_reg= pickle.load(lo)
+    log_reg= pickle.load(lo) """
 
 #Funcion para clasificar las plantas
 def classify(num):
@@ -30,7 +30,7 @@ def main():
         st.title("Potenciostato")  #titulo de la pagina
     with col2:
         #st.header("Representacion") #Encabezado
-        st.image('image/potenciostatoRep.jpg',None,150)
+        st.image('WebApp/image/potenciostatoRep.jpg',None,150)
 
     imagen= Image.open('image/logo espol.png') #Abrimos la imagen
     st.sidebar.image(imagen,None)
