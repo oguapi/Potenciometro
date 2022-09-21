@@ -150,11 +150,6 @@ def main():
         if st.button("Cerrar"):
             st.session_state["password_correct"]= False
 
-        """ chart_data = pd.DataFrame(
-            np.random.randn(20, 3),
-            columns=['a', 'b', 'c'])
-
-        st.line_chart(chart_data) """
 
 if __name__ == '__main__':
     main()
