@@ -1,5 +1,5 @@
 {
   "projects": {
-    "default": "potenciostato"
+    "default": "esp32base"
   }
 }
