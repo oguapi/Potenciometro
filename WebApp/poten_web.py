@@ -32,7 +32,7 @@ def main():
         #st.header("Representacion") #Encabezado
         st.image('WebApp/image/potenciostatoRep.jpg',None,150)
 
-    imagen= Image.open('image/logo espol.png') #Abrimos la imagen
+    imagen= Image.open('WebApp/image/logo espol.png') #Abrimos la imagen
     st.sidebar.image(imagen,None)
 
     st.sidebar.header("Interfaz de Usuario")  #entrada de datos del usuario
