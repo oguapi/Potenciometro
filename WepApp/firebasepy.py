@@ -7,7 +7,7 @@ from firebase_admin import db
 #para no inicializar mas de una vez la app de firebase
 if not firebase_admin._apps:
     #cargo el certificado de mi proyecto firebase
-    firebase_sdk= credentials.Certificate('esp32base-64b3f-firebase-adminsdk-i4rwi-27859964f5.json')
+    firebase_sdk= credentials.Certificate('WebApp/esp32base-64b3f-firebase-adminsdk-i4rwi-27859964f5.json')
 
     #Hacemos referencia a la base de datos en tiempo real de firebase
     firebase_admin.initialize_app(firebase_sdk,{'databaseURL':'https://esp32base-64b3f-default-rtdb.firebaseio.com/'})
