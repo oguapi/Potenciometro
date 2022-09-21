@@ -120,6 +120,7 @@ def main():
             if st.button('Descargar datos'):
             #   Boton para descargar los datos
                 b=0
+                tabla1.to_excel(file_name)
         #for key, muestras in newvals.items():
         #    tabla= pd.DataFrame(muestras, index=[m])
         #    m+=1
@@ -149,11 +150,11 @@ def main():
         if st.button("Cerrar"):
             st.session_state["password_correct"]= False
 
-        chart_data = pd.DataFrame(
+        """ chart_data = pd.DataFrame(
             np.random.randn(20, 3),
             columns=['a', 'b', 'c'])
 
-        st.line_chart(chart_data)
+        st.line_chart(chart_data) """
 
 if __name__ == '__main__':
     main()
