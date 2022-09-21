@@ -116,13 +116,13 @@ def main():
             st.write(tabla1)
             #st.line_chart(tabla1['A0'])
             #st.bar_chart(tabla1.sort_index(False))
+
+            if st.button('Descargar datos'):
+            #   Boton para descargar los datos
+                b=0
         #for key, muestras in newvals.items():
         #    tabla= pd.DataFrame(muestras, index=[m])
         #    m+=1
-
-        if st.button('Descargar datos'):
-            #Boton para descargar los datos
-            b=0
 
     #df.to_csv() #para exportarlo a csv
 
